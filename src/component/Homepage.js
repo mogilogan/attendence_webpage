@@ -54,7 +54,7 @@ const Homepage =()=>{
                 <tr>
                     <td>20EC1001</td>
                     <td>Aarthe</td>
-                    <td><select><option>Present</option><option>Absent</option></select></td>
+                    <td><input type="checkbox"/></td>
                 </tr>
                 <tr>
                     <td>Alberto</td>

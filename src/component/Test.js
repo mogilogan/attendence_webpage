@@ -24,7 +24,7 @@ const Test = () =>  {
                     <tr>
                         <td>Edison</td>
                         <td>Padilla</td>
-                        <td>20</td>
+                        <td><select><option>Present</option><option>Absemt</option></select></td>
                     </tr>
                     <tr>
                         <td>Alberto</td>
