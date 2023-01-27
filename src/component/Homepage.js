@@ -2,15 +2,25 @@ import React,{useState,useRef} from 'react';
 import { useDownloadExcel } from 'react-export-table-to-excel';
 
 import  monday from './mon.json';
+import tuesday from './tue.json';
+import wednesday from './wed.json';
+import thursday from './thu.json';
+import friday from './fri.json';
+
 
 const Homepage =()=>{
     const [day,setDay]=useState(Date().toLocaleString());
     const [showhide,setShowhide]=useState('');
+    const [showlist,setShowlist]=useState('');
     const tableRef = useRef(null);
 
     const handleshowhide=(event)=>{
         const getday = event.target.value;    
         setShowhide(getday);
+      }
+      const handleshowlist=(event)=>{
+        const getperiod = event.target.value;    
+        setShowlist(getperiod);
       }
 
       const { onDownload } = useDownloadExcel({
@@ -34,62 +44,34 @@ const Homepage =()=>{
             </select>
 
             {showhide==="mon" && (
-            <div>
-            <button onClick={onDownload}> Export excel </button>
-
-             <table  ref={tableRef}>
-              <tbody>
-                <tr>
-                    <th>Register No.</th>
-                    <th>Name</th>
-                    <th>{monday.one}</th>
-                    <th>{monday.two}</th>
-                    <th>{monday.three}</th>
-                    <th>{monday.four}</th>
-                    <th>{monday.five}</th>
-                    <th>{monday.six}</th>
-                    <th>{monday.seven}</th>
-                    <th>{monday.eight}</th>
-                </tr>
-                <tr>
-                    <td>20EC1001</td>
-                    <td>Aarthe</td>
-                    <td><input type="checkbox"/></td>
-                </tr>
-                <tr>
-                    <td>Alberto</td>
-                    <td>Lopez</td>
-                    <td>94</td>
-                </tr>
-              </tbody>
-            </table>
-
-        </div>
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option value="mon">{monday.one}</option>
+                <option value="mon">{monday.two}</option>
+                <option value="mon">{monday.three}</option>
+                <option value="mon">{monday.four}</option>
+                <option value="mon">{monday.five}</option>
+                <option value="mon">{monday.six}</option>
+                <option value="mon">{monday.seven}</option>
+                <option value="mon">{monday.eight}</option>
+            </select>
+          </div>
+            )}
+            {(showlist==="oec"||) && (
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option >{monday.one}</option>
+                <option>{monday.two}</option>
+                <option>{monday.three}</option>
+                <option>{monday.four}</option>
+                <option>{monday.five}</option>
+                <option>{monday.six}</option>
+                <option>{monday.seven}</option>
+                <option>{monday.eight}</option>
+            </select>
+          </div>
             )}
 
-{showhide==="tue" && (
-            <div>
-                <p>tue</p>
-            </div>
-            )}
-
-{showhide==="wed" && (
-            <div>
-                <p>wed</p>
-            </div>
-            )}
-
-{showhide==="thu" && (
-            <div>
-                <p>thu</p>
-            </div>
-            )}
-
-{showhide==="fri" && (
-            <div>
-                <p>fri</p>
-            </div>
-            )}
 
 
 
