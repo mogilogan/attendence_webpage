@@ -1,0 +1,53 @@
+{"mon":{
+        "one":"OEC",
+        "two":"VLSI",
+        "three":"CSE",
+        "four":"IEM",
+        "five":"H/M",
+        "six":"MOE",
+        "seven":"LY",
+        "eight":"SP"
+    
+},
+"tue":{
+        "one":"VLSI",
+    "two":"MOE",
+    "three":"CSE",
+    "four":"H/M",
+    "five":"IEM",
+    "six":"RC",
+    "seven":"EITK",
+    "eight":"EITK"
+},
+"wed":{
+        "one":"H/M",
+    "two":"LAB",
+    "three":"LAB",
+    "four":"LAB",
+    "five":"OEC",
+    "six":"T&P",
+    "seven":"T&P",
+    "eight":"T&P"
+},
+"thu":{
+        "one":"CSE",
+        "two":"MOE",
+        "three":"DCN",
+        "four":"OEC",
+        "five":"RC",
+        "six":"LAB",
+        "seven":"LAB",
+        "eight":"LAB"
+},
+"fri":{
+        "one":"IEM",
+    "two":"DCN",
+    "three":"CSE",
+    "four":"VLSI",
+    "five":"H/M",
+    "six":"LAB",
+    "seven":"LAB",
+    "eight":"LAB"
+
+}
+}

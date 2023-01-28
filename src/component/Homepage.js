@@ -1,11 +1,8 @@
 import React,{useState,useRef} from 'react';
 import { useDownloadExcel } from 'react-export-table-to-excel';
 
-import  monday from './mon.json';
-import tuesday from './tue.json';
-import wednesday from './wed.json';
-import thursday from './thu.json';
-import friday from './fri.json';
+import  timetable from './days.json';
+
 
 
 const Homepage =()=>{
@@ -44,7 +41,7 @@ const Homepage =()=>{
 
       const { onDownload } = useDownloadExcel({
         currentTableRef: tableRef.current,
-        filename: 'Users table',
+        filename: `${day.slice(0,3)} ${showlist} ${day.slice(4,15)}`,
         sheet: 'Users'
     })
     
@@ -55,7 +52,7 @@ const Homepage =()=>{
 
             <select onChange={(e)=>(handleshowhide(e))}>
                 <option value="">Select Day</option>
-                <option value="mon">MONDAY</option>
+                <option value="mon">Monday</option>
                 <option value="tue">Tuesday</option>
                 <option value="wed">Wednesday</option>
                 <option value="thu">Thursday</option>
@@ -65,18 +62,80 @@ const Homepage =()=>{
             {showhide==="mon" && (
           <div>
             <select onChange={(e)=>(handleshowlist(e))}>
-                <option value="OEC">{monday.one}</option>
-                <option value="VLSI">{monday.two}</option>
-                <option value="CSE">{monday.three}</option>
-                <option value="IEM">{monday.four}</option>
-                <option value="H/M">{monday.five}</option>
-                <option value="MOE">{monday.six}</option>
-                <option value="Ly">{monday.seven}</option>
-                <option value="SP">{monday.eight}</option>
+                <option value="OEC">{timetable.mon.one}</option>
+                <option value="VLSI">{timetable.mon.two}</option>
+                <option value="CSE">{timetable.mon.three}</option>
+                <option value="IEM">{timetable.mon.four}</option>
+                <option value="H/M">{timetable.mon.five}</option>
+                <option value="MOE">{timetable.mon.six}</option>
+                <option value="Ly">{timetable.mon.seven}</option>
+                <option value="SP">{timetable.mon.eight}</option>
             </select>
           </div>
             )}
-            {(showlist==="OEC"||showlist==="VLSI"||showlist==="CSE"||showlist==="IEM"||showlist==="H/M"||showlist==="MOE"||showlist==="LY"||showlist==="SP") && (
+               {showhide==="tue" && (
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option value="VLSI">{timetable.tue.one}</option>
+                <option value="MOE">{timetable.tue.two}</option>
+                <option value="CSE">{timetable.tue.three}</option>
+                <option value="H/M">{timetable.tue.four}</option>
+                <option value="IEM">{timetable.tue.five}</option>
+                <option value="RC">{timetable.tue.six}</option>
+                <option value="EITK">{timetable.tue.seven}</option>
+                <option value="EITK">{timetable.tue.eight}</option>
+            </select>
+          </div>
+            )}
+                {showhide==="wed" && (
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option value="H/M">{timetable.wed.one}</option>
+                <option value="LAB">{timetable.wed.two}</option>
+                <option value="LAB">{timetable.wed.three}</option>
+                <option value="LAB">{timetable.wed.four}</option>
+                <option value="OEC">{timetable.wed.five}</option>
+                <option value="T&P">{timetable.wed.six}</option>
+                <option value="T&P">{timetable.wed.seven}</option>
+                <option value="T&P">{timetable.wed.eight}</option>
+            </select>
+          </div>
+            )}
+                {showhide==="thu" && (
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option value="CSE">{timetable.thu.one}</option>
+                <option value="MOE">{timetable.thu.two}</option>
+                <option value="DCN">{timetable.thu.three}</option>
+                <option value="OEC">{timetable.thu.four}</option>
+                <option value="RC">{timetable.thu.five}</option>
+                <option value="LAB">{timetable.thu.six}</option>
+                <option value="LAB">{timetable.thu.seven}</option>
+                <option value="LAB">{timetable.thu.eight}</option>
+            </select>
+          </div>
+            )}
+                {showhide==="fri" && (
+          <div>
+            <select onChange={(e)=>(handleshowlist(e))}>
+                <option value="IEM">{timetable.fri.one}</option>
+                <option value="DCN">{timetable.fri.two}</option>
+                <option value="CSE">{timetable.fri.three}</option>
+                <option value="VLSI">{timetable.fri.four}</option>
+                <option value="H/M">{timetable.fri.five}</option>
+                <option value="LAB">{timetable.fri.six}</option>
+                <option value="LAB">{timetable.fri.seven}</option>
+                <option value="LAB">{timetable.fri.eight}</option>
+            </select>
+          </div>
+            )}
+
+
+
+
+
+
+            {(showlist==="OEC"||showlist==="VLSI"||showlist==="CSE"||showlist==="IEM"||showlist==="H/M"||showlist==="MOE"||showlist==="LY"||showlist==="SP"||showlist==="RC"||showlist==="EITK"||showlist==="LAB"||showlist==="T&P"||showlist==="DCN") && (
           <div>
             <center>
             <h3>{showlist}</h3>
